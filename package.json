@@ -5,7 +5,13 @@
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
-    "test": "jest"
+    "test": "jest",
+    "test-with-coverage": "jest --coverage && codecov",
+    "dev": "tsc --watch",
+    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "lint": "tslint -p tsconfig.json",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test && npm run lint"
   },
   "repository": "git@github.com/uport-project/credential-status.git",
   "keywords": [
@@ -24,9 +30,15 @@
   "devDependencies": {
     "@types/jest": "^24.0.20",
     "@types/node": "^12.11.7",
+    "codecov": "^3.6.1",
     "jest": "^24.9.0",
+    "prettier": "^1.18.2",
     "ts-jest": "^24.1.0",
+    "tslint": "^5.20.0",
+    "tslint-config-prettier": "^1.18.0",
     "typescript": "^3.6.4"
   },
-  "files": ["lib/*", "LICENSE"]
+  "files": [
+    "lib/**/*"
+  ]
 }
