@@ -34,6 +34,9 @@ const status = new Status({
 })
 
 val result = await status.checkStatus(token)
-// { "revoked": false }
+
+// { "revokedAt": "0x5348684" }
   
 ```
+
+Note: only issuer revocations are considered for now
