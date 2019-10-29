@@ -4,6 +4,7 @@
   "description": "credential status aggregator for did-jwt",
   "main": "dist/index.js",
   "scripts": {
+    "build": "tsc",
     "test": "jest"
   },
   "repository": "git@github.com/uport-project/credential-status.git",
@@ -21,7 +22,10 @@
   },
   "homepage": "https://github.com/uport-project/credential-status#readme",
   "devDependencies": {
+    "@types/jest": "^24.0.20",
+    "@types/node": "^12.11.7",
     "jest": "^24.9.0",
+    "ts-jest": "^24.1.0",
     "typescript": "^3.6.4"
   }
 }
