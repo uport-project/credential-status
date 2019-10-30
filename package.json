@@ -12,7 +12,7 @@
     "lint": "tslint -p tsconfig.json",
     "prepare": "npm run build",
     "prepublishOnly": "npm test && npm run lint",
-    "release": "semantic-release --debug --dry-run"
+    "release": "semantic-release --debug"
   },
   "repository": "git@github.com/uport-project/credential-status.git",
   "keywords": [
