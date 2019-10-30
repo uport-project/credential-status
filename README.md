@@ -1,6 +1,6 @@
 # credential-status
 
-A credential status aggregator for did-jwt.
+A credential status method aggregator for did-jwt.
 
 ## Usage
 
@@ -30,7 +30,7 @@ import { EthrStatusRegistry } from ethr-status-registry
 import { Status } from 'credential-status'
 
 const status = new Status({
-    EthrStatusRegistry2019 : new EthrStatusRegistry(config)
+    ...new EthrStatusRegistry(config).asStatusMethod,
 })
 
 val result = await status.checkStatus(token)
