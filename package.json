@@ -35,6 +35,7 @@
     "@types/node": "^12.11.7",
     "codecov": "^3.6.1",
     "jest": "^24.9.0",
+    "jest-extended": "^0.11.2",
     "prettier": "^1.18.2",
     "semantic-release": "^15.13.28",
     "ts-jest": "^24.1.0",
@@ -43,6 +44,10 @@
     "typescript": "^3.6.4"
   },
   "files": [
-    "lib/**/*"
-  ]
+    "lib/*",
+    "LICENSE"
+  ],
+  "dependencies": {
+    "did-jwt": "^3.0.0"
+  }
 }

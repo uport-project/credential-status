@@ -11,5 +11,6 @@ module.exports = {
     "!src/**/*.d.ts",
     "!**/node_modules/**"
   ],
-  testEnvironment: "node"
+  testEnvironment: "node",
+  setupFilesAfterEnv: ["jest-extended"]
 }
