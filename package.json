@@ -3,6 +3,9 @@
   "version": "0.0.1",
   "description": "credential status aggregator for did-jwt",
   "main": "dist/index.js",
+  "types": "lib/index.d.ts",
+  "source": "src/index.ts",
+  "module": "lib/index.js",
   "scripts": {
     "build": "tsc",
     "test": "jest",
