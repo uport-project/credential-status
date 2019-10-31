@@ -1,6 +1,6 @@
 {
   "name": "credential-status",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "credential status aggregator for did-jwt",
   "main": "dist/index.js",
   "scripts": {
