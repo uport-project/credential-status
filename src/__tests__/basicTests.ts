@@ -14,9 +14,7 @@ const referenceDoc = {
               "authentication": [
                 {
                   "type": "Secp256k1SignatureAuthentication2018",
-                  "publicKey": [
-                    "did:ethr:0xf3beac30c498d9e26865f34fcaa57dbb935b0d74#owner"
-                  ]
+                  "publicKey": "did:ethr:0xf3beac30c498d9e26865f34fcaa57dbb935b0d74#owner"
                 }
               ],
               "publicKey": [
