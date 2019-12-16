@@ -4,9 +4,10 @@ import {
   Status,
   StatusMethod,
   StatusResolver,
-  CredentialStatus,
-  DIDDocument
+  CredentialStatus
 } from '../index'
+
+import { DIDDocument } from 'did-resolver'
 
 const referenceDoc = {
               "@context": "https://w3id.org/did/v1",

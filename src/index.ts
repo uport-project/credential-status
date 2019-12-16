@@ -1,8 +1,6 @@
 import { decodeJWT } from 'did-jwt'
 import { DIDDocument, PublicKey } from 'did-resolver'
 
-export type DIDDocument = DIDDocument
-
 /**
  * Represents the result of a status check
  */
