@@ -1,4 +1,5 @@
 import { decodeJWT } from 'did-jwt'
+import { DIDDocument, PublicKey } from 'did-resolver'
 
 /**
  * Represents the result of a status check
@@ -16,7 +17,6 @@ export interface CredentialStatus {
  * ```json
  * status : { type: "EthrStatusRegistry2019", id: "rinkeby:0xregistryAddress" }
  * ```
- *
  */
 export interface StatusEntry {
   type: string
@@ -48,7 +48,8 @@ export interface StatusResolver {
  * The method signature expected to be implemented by credential status resolvers
  */
 export type StatusMethod = (
-  credential: string
+  credential: string,
+  didDoc: DIDDocument
 ) => Promise<null | CredentialStatus>
 
 interface JWTPayloadWithStatus {
@@ -72,9 +73,9 @@ export class Status implements StatusResolver {
    * Example:
    * ```typescript
    * const status = new Status({
-   *   ...new EthrStatusRegistry(config).asStatusMethod,
-   *   "CredentialStatusList2017": new CredentialStatusList2017().checkStatus,
-   *   "CustomStatusChecker": customStatusCheckerMethod
+   *   ...new EthrStatusRegistry(config).asStatusMethod,                       //using convenience method
+   *   "CredentialStatusList2017": new CredentialStatusList2017().checkStatus, //referencing a checkStatus implementation
+   *   "CustomStatusChecker": customStatusCheckerMethod                        //directly referencing an independent method
    * })
    * ```
    */
@@ -82,7 +83,7 @@ export class Status implements StatusResolver {
     this.registry = registry
   }
 
-  checkStatus(credential: string): Promise<null | CredentialStatus> {
+  checkStatus(credential: string, didDoc: DIDDocument): Promise<null | CredentialStatus> {
     // TODO: validate the credential to be VerifiableCredential or VerifiablePresentation
     const decoded = decodeJWT(credential)
     const statusEntry = (decoded.payload as JWTPayloadWithStatus).status
@@ -96,7 +97,7 @@ export class Status implements StatusResolver {
     const method = this.registry[statusEntry.type]
 
     if (typeof method !== 'undefined' && method != null) {
-      return method(credential)
+      return method(credential, didDoc)
     } else {
       return new Promise((resolve, reject) => {
         // Once the credential status mechanisms in W3C get more stable, perhaps this can become a `reject`
