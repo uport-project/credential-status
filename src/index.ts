@@ -47,10 +47,7 @@ export interface StatusResolver {
 /**
  * The method signature expected to be implemented by credential status resolvers
  */
-export type StatusMethod = (
-  credential: string,
-  didDoc: DIDDocument
-) => Promise<null | CredentialStatus>
+export type StatusMethod = (credential: string, didDoc: DIDDocument) => Promise<null | CredentialStatus>
 
 interface JWTPayloadWithStatus {
   status?: StatusEntry

@@ -1,32 +1,27 @@
 import 'jest-extended'
 
-import {
-  Status,
-  StatusMethod,
-  StatusResolver,
-  CredentialStatus
-} from '../index'
+import { Status, StatusMethod, StatusResolver, CredentialStatus } from '../index'
 
 import { DIDDocument } from 'did-resolver'
 
 const referenceDoc = {
-              "@context": "https://w3id.org/did/v1",
-              "id": "did:ethr:0xf3beac30c498d9e26865f34fcaa57dbb935b0d74",
-              "authentication": [
-                {
-                  "type": "Secp256k1SignatureAuthentication2018",
-                  "publicKey": "did:ethr:0xf3beac30c498d9e26865f34fcaa57dbb935b0d74#owner"
-                }
-              ],
-              "publicKey": [
-                {
-                  "id": "did:ethr:0xf3beac30c498d9e26865f34fcaa57dbb935b0d74#owner",
-                  "type": "Secp256k1VerificationKey2018",
-                  "ethereumAddress": "0xf3beac30c498d9e26865f34fcaa57dbb935b0d74",
-                  "owner": "did:ethr:0xf3beac30c498d9e26865f34fcaa57dbb935b0d74"
-                }
-              ]
-            } as DIDDocument
+  '@context': 'https://w3id.org/did/v1',
+  id: 'did:ethr:0xf3beac30c498d9e26865f34fcaa57dbb935b0d74',
+  authentication: [
+    {
+      type: 'Secp256k1SignatureAuthentication2018',
+      publicKey: 'did:ethr:0xf3beac30c498d9e26865f34fcaa57dbb935b0d74#owner'
+    }
+  ],
+  publicKey: [
+    {
+      id: 'did:ethr:0xf3beac30c498d9e26865f34fcaa57dbb935b0d74#owner',
+      type: 'Secp256k1VerificationKey2018',
+      ethereumAddress: '0xf3beac30c498d9e26865f34fcaa57dbb935b0d74',
+      owner: 'did:ethr:0xf3beac30c498d9e26865f34fcaa57dbb935b0d74'
+    }
+  ]
+} as DIDDocument
 
 test('should be able to instantiate Status', () => {
   expect(new Status()).not.toBeNil()
@@ -44,8 +39,7 @@ test('should reject unknown status method', async () => {
     referenceDoc
   )
   expect(statusEntry).toStrictEqual({
-    error:
-      'Credential status method EthrStatusRegistry2019 unknown. Validity can not be determined.'
+    error: 'Credential status method EthrStatusRegistry2019 unknown. Validity can not be determined.'
   })
 })
 
