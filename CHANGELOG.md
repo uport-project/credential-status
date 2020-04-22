@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/uport-project/credential-status/compare/1.1.0...1.1.1) (2020-04-22)
+
+
+### Bug Fixes
+
+* **build:** fix path in package.json main attribute ([ddc7c67](https://github.com/uport-project/credential-status/commit/ddc7c67261a06930f75802367fef85d4128ca48f))
+
 # [1.1.0](https://github.com/uport-project/credential-status/compare/1.0.1...1.1.0) (2020-01-16)
 
 
