@@ -2,7 +2,7 @@
   "name": "credential-status",
   "version": "1.1.0",
   "description": "credential status aggregator for did-jwt",
-  "main": "dist/index.js",
+  "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "source": "src/index.ts",
   "module": "lib/index.js",
