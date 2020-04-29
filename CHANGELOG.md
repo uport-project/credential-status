@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/uport-project/credential-status/compare/1.1.1...1.2.0) (2020-04-29)
+
+
+### Features
+
+* rename `status` to `crdentialStatus` for credentials & presentations ([be0b90d](https://github.com/uport-project/credential-status/commit/be0b90db1e12f34016261a195aab55545ff8851f)), closes [#13](https://github.com/uport-project/credential-status/issues/13)
+
 ## [1.1.1](https://github.com/uport-project/credential-status/compare/1.1.0...1.1.1) (2020-04-22)
 
 
