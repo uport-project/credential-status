@@ -14,10 +14,10 @@ This library is meant to be used with `did-jwt`, as a status method aggregator c
 
 Example:
 
-A JWT with a status field in the payload:
+A JWT with a status field in the payload.vc field:
 ```json
 {
-  "status": {
+  "credentialStatus": {
     "id": "mainnet:0xStatusRegistryAddress",
     "type": "EthrStatusRegistry2019"
   },

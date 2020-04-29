@@ -50,7 +50,7 @@ export interface StatusResolver {
 export type StatusMethod = (credential: string, didDoc: DIDDocument) => Promise<null | CredentialStatus>
 
 interface JWTPayloadWithStatus {
-  status?: StatusEntry
+  credentialStatus?: StatusEntry
   [x: string]: any
 }
 
@@ -83,7 +83,7 @@ export class Status implements StatusResolver {
   checkStatus(credential: string, didDoc: DIDDocument): Promise<null | CredentialStatus> {
     // TODO: validate the credential to be VerifiableCredential or VerifiablePresentation
     const decoded = decodeJWT(credential)
-    const statusEntry = (decoded.payload as JWTPayloadWithStatus).status
+    const statusEntry = (decoded.payload as JWTPayloadWithStatus).credentialStatus
 
     if (typeof statusEntry === 'undefined') {
       return new Promise((resolve, reject) => {
