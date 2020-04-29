@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/uport-project/credential-status/compare/1.2.0...1.2.1) (2020-04-29)
+
+
+### Bug Fixes
+
+* **deps:** re-set `did-jwt` as a direct dependency ([5fbfd4e](https://github.com/uport-project/credential-status/commit/5fbfd4e78599d8c46e18152b4ad287b37ee7c9a1))
+
 # [1.2.0](https://github.com/uport-project/credential-status/compare/1.1.1...1.2.0) (2020-04-29)
 
 
