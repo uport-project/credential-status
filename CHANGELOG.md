@@ -1,3 +1,10 @@
+## [1.2.2](https://github.com/uport-project/credential-status/compare/1.2.1...1.2.2) (2021-01-20)
+
+
+### Bug Fixes
+
+* **deps:** bump dependencies and schedule autoupdates ([#25](https://github.com/uport-project/credential-status/issues/25)) ([7046e8c](https://github.com/uport-project/credential-status/commit/7046e8c74eea2ad24a3096d87908174e4081026d))
+
 ## [1.2.1](https://github.com/uport-project/credential-status/compare/1.2.0...1.2.1) (2020-04-29)
 
 
