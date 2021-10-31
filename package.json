@@ -32,8 +32,8 @@
   },
   "homepage": "https://github.com/uport-project/credential-status#readme",
   "devDependencies": {
-    "@semantic-release/changelog": "6.0.0",
-    "@semantic-release/git": "10.0.0",
+    "@semantic-release/changelog": "6.0.1",
+    "@semantic-release/git": "10.0.1",
     "@types/jest": "27.0.2",
     "@types/node": "14.17.32",
     "codecov": "3.8.3",
