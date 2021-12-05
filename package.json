@@ -39,7 +39,7 @@
     "codecov": "3.8.3",
     "jest": "27.4.3",
     "jest-extended": "0.11.5",
-    "prettier": "2.5.0",
+    "prettier": "2.5.1",
     "semantic-release": "18.0.1",
     "ts-jest": "27.0.7",
     "tslint": "5.20.1",
