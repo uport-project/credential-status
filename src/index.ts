@@ -1,11 +1,13 @@
 import { decodeJWT } from 'did-jwt'
-import { DIDDocument, PublicKey } from 'did-resolver'
+import { DIDDocument } from 'did-resolver'
 
 /**
  * Represents the result of a status check
  */
 export interface CredentialStatus {
   revoked?: boolean
+
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   [x: string]: any
 }
 
@@ -21,6 +23,8 @@ export interface CredentialStatus {
 export interface StatusEntry {
   type: string
   id: string
+
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   [x: string]: any
 }
 
@@ -51,6 +55,8 @@ export type StatusMethod = (credential: string, didDoc: DIDDocument) => Promise<
 
 interface JWTPayloadWithStatus {
   credentialStatus?: StatusEntry
+
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   [x: string]: any
 }
 
@@ -71,8 +77,10 @@ export class Status implements StatusResolver {
    * ```typescript
    * const status = new Status({
    *   ...new EthrStatusRegistry(config).asStatusMethod,                       //using convenience method
-   *   "CredentialStatusList2017": new CredentialStatusList2017().checkStatus, //referencing a checkStatus implementation
-   *   "CustomStatusChecker": customStatusCheckerMethod                        //directly referencing an independent method
+   *   "CredentialStatusList2017": new CredentialStatusList2017().checkStatus, //referencing a checkStatus
+   * implementation
+   *   "CustomStatusChecker": customStatusCheckerMethod                        //directly referencing an independent
+   * method
    * })
    * ```
    */
@@ -80,15 +88,13 @@ export class Status implements StatusResolver {
     this.registry = registry
   }
 
-  checkStatus(credential: string, didDoc: DIDDocument): Promise<null | CredentialStatus> {
+  async checkStatus(credential: string, didDoc: DIDDocument): Promise<null | CredentialStatus> {
     // TODO: validate the credential to be VerifiableCredential or VerifiablePresentation
     const decoded = decodeJWT(credential)
     const statusEntry = (decoded.payload as JWTPayloadWithStatus).credentialStatus
 
     if (typeof statusEntry === 'undefined') {
-      return new Promise((resolve, reject) => {
-        resolve({})
-      })
+      return {}
     }
 
     const method = this.registry[statusEntry.type]
@@ -96,12 +102,10 @@ export class Status implements StatusResolver {
     if (typeof method !== 'undefined' && method != null) {
       return method(credential, didDoc)
     } else {
-      return new Promise((resolve, reject) => {
+      return {
         // Once the credential status mechanisms in W3C get more stable, perhaps this can become a `reject`
-        resolve({
-          error: `Credential status method ${statusEntry.type} unknown. Validity can not be determined.`
-        })
-      })
+        error: `Credential status method ${statusEntry.type} unknown. Validity can not be determined.`,
+      }
     }
   }
 }

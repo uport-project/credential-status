@@ -1,13 +1,13 @@
 import 'jest-extended'
 
-import { Status, StatusMethod, StatusResolver, CredentialStatus } from '../index'
+import { Status, StatusMethod, StatusResolver } from '../index'
 
 import { DIDDocument } from 'did-resolver'
 import { SimpleSigner, createJWT } from 'did-jwt'
 
 const privateKey = 'a285ab66393c5fdda46d6fbad9e27fafd438254ab72ad5acb681a0e9f20f5d7b'
 const signerAddress = '0x2036c6cd85692f0fb2c26e6c6b2eced9e4478dfd'
-const issuer: string = `did:ethr:${signerAddress}`
+const issuer = `did:ethr:${signerAddress}`
 const signer = SimpleSigner(privateKey)
 
 const referenceDoc = {
@@ -17,9 +17,9 @@ const referenceDoc = {
     {
       id: `${issuer}#owner`,
       type: 'Secp256k1VerificationKey2018',
-      ethereumAddress: signerAddress
-    }
-  ]
+      ethereumAddress: signerAddress,
+    },
+  ],
 } as DIDDocument
 
 test('should be able to instantiate Status', () => {
@@ -39,7 +39,7 @@ test('should reject unknown status method', async () => {
   )
   const statusEntry = await checker.checkStatus(token, referenceDoc)
   expect(statusEntry).toStrictEqual({
-    error: 'Credential status method UnknownMethod unknown. Validity can not be determined.'
+    error: 'Credential status method UnknownMethod unknown. Validity can not be determined.',
   })
 })
 
@@ -72,7 +72,7 @@ test('sample StatusResolver with easy registration', async () => {
   }
 
   const checker = new Status({
-    ...new CustomStatusChecker().asStatusMethod
+    ...new CustomStatusChecker().asStatusMethod,
   })
 
   const token = await createJWT(
