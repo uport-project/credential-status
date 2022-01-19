@@ -1,5 +1,3 @@
-import 'jest-extended'
-
 import { Status, StatusMethod, StatusResolver } from '../index'
 
 import { DIDDocument } from 'did-resolver'
@@ -23,12 +21,12 @@ const referenceDoc = {
 } as DIDDocument
 
 test('should be able to instantiate Status', () => {
-  expect(new Status()).not.toBeNil()
+  expect(new Status()).not.toBeNull()
 })
 
 test('should be able to call checkStatus', () => {
   const checker = new Status()
-  expect(checker.checkStatus).toBeFunction()
+  expect(typeof checker.checkStatus).toEqual('function')
 })
 
 test('should reject unknown status method', async () => {
