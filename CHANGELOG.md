@@ -1,3 +1,10 @@
+## [1.2.4](https://github.com/uport-project/credential-status/compare/1.2.3...1.2.4) (2022-01-19)
+
+
+### Bug Fixes
+
+* **deps:** upgrade DID dependencies ([ec5cd9f](https://github.com/uport-project/credential-status/commit/ec5cd9f284adf3029e221960af34dab08dd3b366))
+
 ## [1.2.3](https://github.com/uport-project/credential-status/compare/1.2.2...1.2.3) (2022-01-19)
 
 
