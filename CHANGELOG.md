@@ -1,3 +1,10 @@
+## [1.2.3](https://github.com/uport-project/credential-status/compare/1.2.2...1.2.3) (2022-01-19)
+
+
+### Bug Fixes
+
+* **ci:** upgrade CI/CD to gh workflows ([f4e8e26](https://github.com/uport-project/credential-status/commit/f4e8e26893d33022ed6b1f9cb28bcb457c15f858))
+
 ## [1.2.2](https://github.com/uport-project/credential-status/compare/1.2.1...1.2.2) (2021-01-20)
 
 
