@@ -1,3 +1,16 @@
+# [2.0.0](https://github.com/uport-project/credential-status/compare/1.2.4...2.0.0) (2022-02-16)
+
+
+### Features
+
+* add support for more credential formats ([#39](https://github.com/uport-project/credential-status/issues/39)) ([52f68fa](https://github.com/uport-project/credential-status/commit/52f68fa84f53a53b2f23ae1d628f6c727a56cbfe)), closes [#38](https://github.com/uport-project/credential-status/issues/38)
+
+
+### BREAKING CHANGES
+
+* The method signature for `StatusMethod` requires support for both credential formats
+* The return type of `StatusMethod`  is `Promise<CredentialStatus>` with the expectation to reject if there is a problem resolving the status.
+
 ## [1.2.4](https://github.com/uport-project/credential-status/compare/1.2.3...1.2.4) (2022-01-19)
 
 
