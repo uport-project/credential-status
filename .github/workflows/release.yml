@@ -27,11 +27,15 @@ jobs:
           key: ${{ runner.os }}-yarn-${{ hashFiles('**/package.json') }}
 
       - run: yarn install --frozen-lockfile
+      - run: yarn run build
+      - run: yarn run test:ci
+      - run: yarn run lint
 
       - name: setup git coordinates
         run: |
           git config user.name ${{secrets.GH_USER}}
           git config user.email ${{secrets.GH_EMAIL}}
+
 
       - name: Run semantic-release
         env:
