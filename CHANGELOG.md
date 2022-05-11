@@ -1,3 +1,10 @@
+## [2.0.1](https://github.com/uport-project/credential-status/compare/2.0.0...2.0.1) (2022-05-11)
+
+
+### Bug Fixes
+
+* **ci:** run build before release ([#46](https://github.com/uport-project/credential-status/issues/46)) ([50c58da](https://github.com/uport-project/credential-status/commit/50c58da94f4e6d2be88f911d448807d398bc6a83)), closes [#45](https://github.com/uport-project/credential-status/issues/45)
+
 # [2.0.0](https://github.com/uport-project/credential-status/compare/1.2.4...2.0.0) (2022-02-16)
 
 
