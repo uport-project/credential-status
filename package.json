@@ -3,11 +3,10 @@
   "version": "2.0.1",
   "description": "credential status aggregator for did-jwt",
   "main": "lib/index.js",
+  "module": "lib/index.modern.js",
   "types": "lib/index.d.ts",
-  "source": "src/index.ts",
-  "module": "lib/index.js",
   "scripts": {
-    "build": "microbundle --compress=false",
+    "build": "microbundle --compress=false --format=cjs --target=node",
     "test": "jest",
     "test:ci": "jest --coverage && codecov",
     "dev": "tsc --watch",
@@ -52,7 +51,6 @@
   },
   "files": [
     "lib/*",
-    "src/*",
     "LICENSE"
   ],
   "dependencies": {
