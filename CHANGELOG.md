@@ -1,3 +1,10 @@
+## [2.0.2](https://github.com/uport-project/credential-status/compare/2.0.1...2.0.2) (2022-05-12)
+
+
+### Bug Fixes
+
+* **ci:** add multiple build targets ([#47](https://github.com/uport-project/credential-status/issues/47)) ([daa5baa](https://github.com/uport-project/credential-status/commit/daa5baaa7a1a0fe689c622cb891fc03d6803d2e5))
+
 ## [2.0.1](https://github.com/uport-project/credential-status/compare/2.0.0...2.0.1) (2022-05-11)
 
 
