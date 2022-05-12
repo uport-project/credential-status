@@ -2,10 +2,19 @@
   "name": "credential-status",
   "version": "2.0.1",
   "description": "credential status aggregator for did-jwt",
-  "main": "lib/index.js",
-  "types": "lib/index.d.ts",
+  "type": "module",
   "source": "src/index.ts",
-  "module": "lib/index.js",
+  "main": "lib/index.cjs",
+  "module": "lib/index.module.js",
+  "unpkg": "lib/index.umd.js",
+  "types": "lib/index.d.ts",
+  "umd:main": "lib/index.umd.js",
+  "exports": {
+    ".": {
+      "require": "lib/index.cjs",
+      "import": "lib/index.module.js"
+    }
+  },
   "scripts": {
     "build": "microbundle --compress=false",
     "test": "jest",
