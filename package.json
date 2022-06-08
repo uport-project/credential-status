@@ -4,25 +4,30 @@
   "description": "credential status aggregator for did-jwt",
   "type": "module",
   "source": "src/index.ts",
-  "main": "lib/index.cjs",
-  "module": "lib/index.module.js",
-  "unpkg": "lib/index.umd.js",
-  "types": "lib/index.d.ts",
-  "umd:main": "lib/index.umd.js",
+  "main": "./lib/index.cjs",
+  "module": "./lib/index.module.js",
+  "unpkg": "./lib/index.umd.js",
+  "types": "./lib/index.d.ts",
+  "umd:main": "./lib/index.umd.js",
+  "files": [
+    "lib",
+    "src",
+    "LICENSE"
+  ],
   "exports": {
     ".": {
-      "require": "lib/index.cjs",
-      "import": "lib/index.module.js"
+      "require": "./lib/index.cjs",
+      "import": "./lib/index.module.js"
     }
   },
   "scripts": {
     "build": "microbundle --compress=false",
     "test": "jest",
-    "test:ci": "jest --coverage && codecov",
+    "test:ci": "jest --coverage",
     "dev": "tsc --watch",
     "format": "prettier --write \"src/**/*.[jt]s\"",
     "lint": "eslint --ignore-pattern \"src/**/*.test.[jt]s\" \"src/**/*.[jt]s\"",
-    "prepublishOnly": "npm test && npm run lint",
+    "prepublishOnly": "yarn test && yarn format && yarn lint",
     "release": "semantic-release --debug"
   },
   "repository": "git@github.com:uport-project/credential-status.git",
@@ -59,13 +64,8 @@
     "semantic-release": "19.0.2",
     "typescript": "4.5.4"
   },
-  "files": [
-    "lib/*",
-    "src/*",
-    "LICENSE"
-  ],
   "dependencies": {
-    "did-jwt": "^5.12.3",
-    "did-resolver": "^3.1.5"
+    "did-jwt": "^6.1.2",
+    "did-resolver": "^3.2.2"
   }
 }

@@ -1,12 +1,12 @@
 import { CredentialJwtOrJSON, Status, StatusMethod, StatusResolver } from '../index'
 
 import { DIDDocument } from 'did-resolver'
-import { ES256KSigner, createJWT } from 'did-jwt'
+import { ES256KSigner, createJWT, hexToBytes } from 'did-jwt'
 
 const privateKey = 'a285ab66393c5fdda46d6fbad9e27fafd438254ab72ad5acb681a0e9f20f5d7b'
 const signerAddress = '0x2036c6cd85692f0fb2c26e6c6b2eced9e4478dfd'
 const issuer = `did:ethr:${signerAddress}`
-const signer = ES256KSigner(privateKey)
+const signer = ES256KSigner(hexToBytes(privateKey))
 
 const referenceDoc = {
   '@context': 'https://w3id.org/did/v1',
