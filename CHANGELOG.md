@@ -1,3 +1,10 @@
+## [2.0.3](https://github.com/uport-project/credential-status/compare/2.0.2...2.0.3) (2022-06-08)
+
+
+### Bug Fixes
+
+* **deps:** bump did-jwt to v6 & did-resolver to 3.2.2 ([#50](https://github.com/uport-project/credential-status/issues/50)) ([4c10524](https://github.com/uport-project/credential-status/commit/4c105249a4a9b1a59c1617d561ab31f0177ec25d))
+
 ## [2.0.2](https://github.com/uport-project/credential-status/compare/2.0.1...2.0.2) (2022-05-12)
 
 
