@@ -1,3 +1,10 @@
+## [2.0.4](https://github.com/uport-project/credential-status/compare/2.0.3...2.0.4) (2022-08-02)
+
+
+### Bug Fixes
+
+* **deps:** Update dependency did-resolver to v4 ([0e0884a](https://github.com/uport-project/credential-status/commit/0e0884ad36d4bef6b4f62e8e7dcaf1fa8ba1acf1))
+
 ## [2.0.3](https://github.com/uport-project/credential-status/compare/2.0.2...2.0.3) (2022-06-08)
 
 
