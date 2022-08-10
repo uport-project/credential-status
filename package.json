@@ -1,6 +1,6 @@
 {
   "name": "credential-status",
-  "version": "2.0.4",
+  "version": "2.0.5",
   "description": "credential status aggregator for did-jwt",
   "type": "module",
   "source": "src/index.ts",

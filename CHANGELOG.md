@@ -1,3 +1,10 @@
+## [2.0.5](https://github.com/uport-project/credential-status/compare/2.0.4...2.0.5) (2022-08-10)
+
+
+### Bug Fixes
+
+* **deps:** include did-jwt@6.3.0 in release ([2de28e7](https://github.com/uport-project/credential-status/commit/2de28e72a239b4e2a585f3bf6f33f6154a9dac12))
+
 ## [2.0.4](https://github.com/uport-project/credential-status/compare/2.0.3...2.0.4) (2022-08-02)
 
 
