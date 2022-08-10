@@ -41,7 +41,7 @@ const verificationResult = await didJWT.verifyJWT(token, resolver)
 const didDoc = verificationResult.doc
 
 const result = await status.checkStatus(token, didDoc)
-// outputs: { "revokedAt": "0x5348684" }
+// result: { "revokedAt": "0x5348684" }
 
 ```
 
