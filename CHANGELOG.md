@@ -1,3 +1,10 @@
+## [2.0.6](https://github.com/uport-project/credential-status/compare/2.0.5...2.0.6) (2023-08-09)
+
+
+### Bug Fixes
+
+* **deps:** Update did-dependencies ([e7fae5f](https://github.com/uport-project/credential-status/commit/e7fae5f3e5e664ee87d8e3b56e067aaa7e103bc3))
+
 ## [2.0.5](https://github.com/uport-project/credential-status/compare/2.0.4...2.0.5) (2022-08-10)
 
 
