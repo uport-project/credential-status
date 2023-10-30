@@ -2439,10 +2439,12 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-17.0.9.tgz#0b7f161afb5b1cc12518d29b2cdc7175d5490628"
   integrity sha512-5dNBXu/FOER+EXnyah7rn8xlNrfMOQb/qXnw4NQgLkCygKBKhdmF/CA5oXVOKZLBEahw8s2WP9LxIcN/oDDRgQ==
 
-"@types/node@18.18.6":
-  version "18.18.6"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-18.18.6.tgz#26da694f75cdb057750f49d099da5e3f3824cb3e"
-  integrity sha512-wf3Vz+jCmOQ2HV1YUJuCWdL64adYxumkrxtc+H1VUQlnQI04+5HtH+qZCOE21lBE7gIrt+CwX2Wv8Acrw5Ak6w==
+"@types/node@18.18.7":
+  version "18.18.7"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-18.18.7.tgz#bb3a7068dc4ba421b6968f2a259298b3a4e129e8"
+  integrity sha512-bw+lEsxis6eqJYW8Ql6+yTqkE6RuFtsQPSe5JxXbqYRFQEER5aJA9a5UH9igqDWm3X4iLHIKOHlnAXLM4mi7uQ==
+  dependencies:
+    undici-types "~5.26.4"
 
 "@types/normalize-package-data@^2.4.0":
   version "2.4.1"
@@ -3937,10 +3939,10 @@ eslint-config-prettier@8.10.0:
   resolved "https://registry.yarnpkg.com/eslint-config-prettier/-/eslint-config-prettier-8.10.0.tgz#3a06a662130807e2502fc3ff8b4143d8a0658e11"
   integrity sha512-SM8AMJdeQqRYT9O9zguiruQZaN7+z+E4eAP9oiLNGKMtomwaB1E9dcgUD6ZAn/eQAb52USbvezbiljfZUhbJcg==
 
-eslint-plugin-jest@27.4.3:
-  version "27.4.3"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-jest/-/eslint-plugin-jest-27.4.3.tgz#7b2330a9e1819b66d06e66b45dfa8e8ef0c23f79"
-  integrity sha512-7S6SmmsHsgIm06BAGCAxL+ABd9/IB3MWkz2pudj6Qqor2y1qQpWPfuFU4SG9pWj4xDjF0e+D7Llh5useuSzAZw==
+eslint-plugin-jest@27.6.0:
+  version "27.6.0"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-jest/-/eslint-plugin-jest-27.6.0.tgz#e5c0cf735b3c8cad0ef9db5b565b2fc99f5e55ed"
+  integrity sha512-MTlusnnDMChbElsszJvrwD1dN3x6nZl//s4JD23BxB6MgR66TZlL064su24xEIS3VACfAoHV1vgyMgPw8nkdng==
   dependencies:
     "@typescript-eslint/utils" "^5.10.0"
 
@@ -8288,6 +8290,11 @@ unbox-primitive@^1.0.1:
     has-bigints "^1.0.1"
     has-symbols "^1.0.2"
     which-boxed-primitive "^1.0.2"
+
+undici-types@~5.26.4:
+  version "5.26.5"
+  resolved "https://registry.yarnpkg.com/undici-types/-/undici-types-5.26.5.tgz#bcd539893d00b56e964fd2657a4866b221a65617"
+  integrity sha512-JlCMO+ehdEIKqlFxk6IfVoAUVmgz7cU7zD/h9XZ0qzeosSHmUJVOzSQvvYSYWXkFXC+IfLKSIffhv0sVZup6pA==
 
 unicode-canonical-property-names-ecmascript@^2.0.0:
   version "2.0.0"
