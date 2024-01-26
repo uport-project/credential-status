@@ -1,3 +1,15 @@
+# [3.0.0](https://github.com/uport-project/credential-status/compare/2.0.6...3.0.0) (2024-01-26)
+
+
+### chore
+
+* **deps:** update tooling and export types ([#59](https://github.com/uport-project/credential-status/issues/59)) ([7235052](https://github.com/uport-project/credential-status/commit/72350521a019703536a4a063ff83d73d573a4ca6))
+
+
+### BREAKING CHANGES
+
+* **deps:** the exports have changed, bumping major version for safety
+
 ## [2.0.6](https://github.com/uport-project/credential-status/compare/2.0.5...2.0.6) (2023-08-09)
 
 
