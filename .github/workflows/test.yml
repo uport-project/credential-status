@@ -11,8 +11,8 @@ jobs:
       - name: "Setup node with cache"
         uses: actions/setup-node@v4
         with:
-          node-version: 14
-          cache: 'yarn'
+          node-version: 20
+          cache: yarn
 
       - run: yarn install --frozen-lockfile
       - run: yarn run build
@@ -22,4 +22,5 @@ jobs:
       - name: "Upload coverage reports"
         uses: codecov/codecov-action@v3
         with:
+          token: ${{ secrets.CODECOV_TOKEN }} # not required for public repos but sometimes fails without :|
           fail_ci_if_error: true

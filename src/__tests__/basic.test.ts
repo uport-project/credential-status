@@ -56,7 +56,7 @@ describe('credential-status', () => {
 
       const token = await createJWT(
         { credentialStatus: { type: 'CustomStatusChecker', id: 'something something' } },
-        { issuer, signer }
+        { issuer, signer },
       )
       const statusEntry = await checker.checkStatus(token, referenceDoc)
       expect(statusEntry).toStrictEqual({ revoked: false })
@@ -69,10 +69,10 @@ describe('credential-status', () => {
       const checker = new Status()
       const token = await createJWT(
         { credentialStatus: { type: 'UnknownMethod', id: 'something something' } },
-        { issuer, signer }
+        { issuer, signer },
       )
       await expect(checker.checkStatus(token, referenceDoc)).rejects.toThrow(
-        /unknown_method: credentialStatus method UnknownMethod unknown. Validity can not be determined./
+        /unknown_method: credentialStatus method UnknownMethod unknown. Validity can not be determined./,
       )
     })
 
@@ -81,10 +81,10 @@ describe('credential-status', () => {
       const checker = new Status()
       const token = await createJWT(
         { vc: { credentialStatus: { type: 'UnknownMethod', id: 'something something' } } },
-        { issuer, signer }
+        { issuer, signer },
       )
       await expect(checker.checkStatus(token, referenceDoc)).rejects.toThrow(
-        /unknown_method: credentialStatus method UnknownMethod unknown. Validity can not be determined./
+        /unknown_method: credentialStatus method UnknownMethod unknown. Validity can not be determined./,
       )
     })
 
@@ -93,10 +93,10 @@ describe('credential-status', () => {
       const checker = new Status()
       const token = await createJWT(
         { vp: { credentialStatus: { type: 'UnknownMethod', id: 'something something' } } },
-        { issuer, signer }
+        { issuer, signer },
       )
       await expect(checker.checkStatus(token, referenceDoc)).rejects.toThrow(
-        /unknown_method: credentialStatus method UnknownMethod unknown. Validity can not be determined./
+        /unknown_method: credentialStatus method UnknownMethod unknown. Validity can not be determined./,
       )
     })
 
@@ -111,10 +111,10 @@ describe('credential-status', () => {
               id: 'something something',
             },
           },
-          referenceDoc
-        )
+          referenceDoc,
+        ),
       ).rejects.toThrow(
-        /unknown_method: credentialStatus method UnknownMethod unknown. Validity can not be determined./
+        /unknown_method: credentialStatus method UnknownMethod unknown. Validity can not be determined./,
       )
     })
 
@@ -129,10 +129,10 @@ describe('credential-status', () => {
               id: 'something something',
             },
           }),
-          referenceDoc
-        )
+          referenceDoc,
+        ),
       ).rejects.toThrow(
-        /unknown_method: credentialStatus method UnknownMethod unknown. Validity can not be determined./
+        /unknown_method: credentialStatus method UnknownMethod unknown. Validity can not be determined./,
       )
     })
   })
@@ -147,10 +147,10 @@ describe('credential-status', () => {
           {
             credentialStatus: true,
           } as any,
-          referenceDoc
-        )
+          referenceDoc,
+        ),
       ).rejects.toThrow(
-        /bad_request: credentialStatus entry is not formatted correctly. Validity can not be determined./
+        /bad_request: credentialStatus entry is not formatted correctly. Validity can not be determined./,
       )
 
       await expect(
@@ -158,10 +158,10 @@ describe('credential-status', () => {
           {
             credentialStatus: 'this is not revoked, believe me',
           } as any,
-          referenceDoc
-        )
+          referenceDoc,
+        ),
       ).rejects.toThrow(
-        /bad_request: credentialStatus entry is not formatted correctly. Validity can not be determined./
+        /bad_request: credentialStatus entry is not formatted correctly. Validity can not be determined./,
       )
     })
 
@@ -176,10 +176,10 @@ describe('credential-status', () => {
               message: 'believe me',
             },
           } as any,
-          referenceDoc
-        )
+          referenceDoc,
+        ),
       ).rejects.toThrow(
-        /bad_request: credentialStatus entry is not formatted correctly. Validity can not be determined./
+        /bad_request: credentialStatus entry is not formatted correctly. Validity can not be determined./,
       )
     })
 
@@ -194,10 +194,10 @@ describe('credential-status', () => {
               id: 'bar',
             },
           } as any,
-          referenceDoc
-        )
+          referenceDoc,
+        ),
       ).rejects.toThrow(
-        /bad_request: credentialStatus entry is not formatted correctly. Validity can not be determined./
+        /bad_request: credentialStatus entry is not formatted correctly. Validity can not be determined./,
       )
     })
   })
@@ -210,7 +210,7 @@ describe('credential-status', () => {
       const checker = new Status({ CustomStatusChecker: checkStatus })
       const token = await createJWT(
         { credentialStatus: { type: 'CustomStatusChecker', id: 'something something' } },
-        { issuer, signer }
+        { issuer, signer },
       )
       const statusEntry = await checker.checkStatus(token, referenceDoc)
       expect(statusEntry).toStrictEqual({ revoked: false, 'custom method works': true })
@@ -223,7 +223,7 @@ describe('credential-status', () => {
       const checker = new Status({ CustomStatusChecker: checkStatus })
       const token = await createJWT(
         { vc: { credentialStatus: { type: 'CustomStatusChecker', id: 'something something' } } },
-        { issuer, signer }
+        { issuer, signer },
       )
       const statusEntry = await checker.checkStatus(token, referenceDoc)
       expect(statusEntry).toStrictEqual({ revoked: false, 'custom method works': true })
@@ -236,7 +236,7 @@ describe('credential-status', () => {
       const checker = new Status({ CustomStatusChecker: checkStatus })
       const token = await createJWT(
         { vp: { credentialStatus: { type: 'CustomStatusChecker', id: 'something something' } } },
-        { issuer, signer }
+        { issuer, signer },
       )
       const statusEntry = await checker.checkStatus(token, referenceDoc)
       expect(statusEntry).toStrictEqual({ revoked: false, 'custom method works': true })
@@ -254,7 +254,7 @@ describe('credential-status', () => {
             id: 'something something',
           },
         },
-        referenceDoc
+        referenceDoc,
       )
       expect(statusEntry).toStrictEqual({ revoked: false, 'custom method works': true })
     })
@@ -271,7 +271,7 @@ describe('credential-status', () => {
             id: 'something something',
           },
         }),
-        referenceDoc
+        referenceDoc,
       )
       expect(statusEntry).toStrictEqual({ revoked: false, 'custom method works': true })
     })
@@ -286,7 +286,7 @@ describe('credential-status', () => {
           credentialStatus: { type: 'Unknown', id: 'nope' },
           vc: { credentialStatus: { type: 'CustomStatusChecker', id: 'something something' } },
         },
-        { issuer, signer }
+        { issuer, signer },
       )
       const statusEntry = await checker.checkStatus(token, referenceDoc)
       expect(statusEntry).toStrictEqual({ revoked: false, 'custom method works': true })

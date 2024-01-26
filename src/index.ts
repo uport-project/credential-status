@@ -148,7 +148,7 @@ export class Status implements StatusResolver {
 
     if (!method) {
       throw new Error(
-        `unknown_method: credentialStatus method ${statusEntry.type} unknown. Validity can not be determined.`
+        `unknown_method: credentialStatus method ${statusEntry.type} unknown. Validity can not be determined.`,
       )
     } else {
       return method(credential, didDoc)
