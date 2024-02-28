@@ -1,3 +1,10 @@
+## [3.0.1](https://github.com/uport-project/credential-status/compare/3.0.0...3.0.1) (2024-02-28)
+
+
+### Bug Fixes
+
+* **deps:** Update dependency did-jwt to v8.0.1 ([824814b](https://github.com/uport-project/credential-status/commit/824814be088f3df5b6e809d9c82f73cc8838d034))
+
 # [3.0.0](https://github.com/uport-project/credential-status/compare/2.0.6...3.0.0) (2024-01-26)
 
 
