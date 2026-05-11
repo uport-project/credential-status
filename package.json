@@ -64,6 +64,6 @@
   },
   "dependencies": {
     "did-jwt": "^8.0.0",
-    "did-resolver": "^4.1.0"
+    "did-resolver": "^5.0.0"
   }
 }
